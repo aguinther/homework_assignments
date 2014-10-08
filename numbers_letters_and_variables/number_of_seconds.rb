@@ -20,7 +20,7 @@ puts "  #{seconds_in_hour} seconds in an hour,"
 puts "  #{seconds_in_day} seconds in a day,"
 puts "  #{seconds_in_week} seconds in a week"
 
-print "That means when you turn 20, you've been alive " \
-"for #{20 * seconds_in_year} seconds, " \
-'and if you make it to 100, you will have lived ' \
-"#{100 * seconds_in_year} seconds. Make them count!\n"
+puts "That means when you turn 20, you've been alive " \
+"for #{20 * seconds_in_year} seconds, "
+puts 'and if you make it to 100, you will have lived ' \
+"#{100 * seconds_in_year} seconds. Make them count!"
