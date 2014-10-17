@@ -8,18 +8,22 @@ class MediaPlayer
   end
 
   def add_song(name, artist)
-    song = Song.new(name, artist)
-    @songs.push(song)
-    song
+    if name.class == String && artist.class == String
+      song = Song.new(name, artist)
+      @songs.push(song)
+      song
+    else
+      'Both parameters must be a string'
+    end
   end
 
   def add_playlist(name)
-    if name.is_a?(String)
+    if name.class == String
       playlist = Playlist.new(name)
       @playlists.push(playlist)
       playlist
     else
-     'name parameter must be a string'
+      'Parameter must be a string'
     end
   end
 
@@ -85,28 +89,3 @@ class MediaPlayer
     end
   end
 end
-
-mp3_player = MediaPlayer.new
-puts mp3_player.add_song('Highway Star', 'Deep Purple')
-puts mp3_player.add_song('Dangerous', 'Big Data')
-puts mp3_player.add_song('Tongues', 'Joywave')
-puts mp3_player.add_song('Smoke on the Water', 'Deep Purple')
-puts ''
-deep_purple_hits = mp3_player.add_playlist('Deep Purple Greatest Hits')
-puts deep_purple_hits
-deep_purple_hits.add_all(mp3_player.get_song_by_artist('Deep Purple'))
-puts deep_purple_hits.list
-puts ''
-puts 'get_song_by_name Tongues'
-puts mp3_player.get_song_by_name('Tongues')
-puts 'get_song_by_artist Big Data'
-puts mp3_player.get_song_by_artist('Big Data')
-puts 'get_song_by_artist Deep Purple'
-puts mp3_player.get_song_by_artist('Deep Purple')
-puts ''
-puts 'All Songs:'
-puts mp3_player.songs
-puts ''
-puts 'Shuffle Songs'
-mp3_player.shuffle!
-puts mp3_player.songs

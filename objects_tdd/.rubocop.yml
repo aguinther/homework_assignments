@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - 'Guardfile'
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
