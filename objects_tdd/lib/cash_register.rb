@@ -16,7 +16,9 @@ class CashRegister
   end
 
   def pay(amount)
-    if amount >= 0
+    if amount < 0
+      'Payment must be positive'
+    else
       if amount <= @total
         @total -= amount
         "Your new total is $#{total}"
@@ -25,8 +27,6 @@ class CashRegister
         @total = 0
         "Your change is $#{sprintf('%.2f', change)}"
       end
-    else
-      'Cannot pay a negative amount'
     end
   end
 end

@@ -77,10 +77,10 @@ describe CashRegister do
 
     context 'and the amount < 0' do
       it 'raises an argument error' do
-        expect(subject.pay(-2)).to eq('Cannot pay a negative amount')
+        expect(subject.pay(-10)).to eq('Payment must be positive')
       end
       it 'does not change the total' do
-        subject.pay(-2)
+        subject.pay(-10)
         expect(subject.total).to eq('9.00')
       end
     end
