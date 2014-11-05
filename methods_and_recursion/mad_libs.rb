@@ -14,7 +14,7 @@ def ask_question(token)
   gets.chomp
 end
 
-mad_lib_file = File.new('madlibs.txt', 'r')
+mad_lib_file = File.new(File.dirname(__FILE__) + '/madlibs.txt', 'r')
 
 mad_lib = mad_lib_file.readlines.join
 question_token = get_question_token(mad_lib)
