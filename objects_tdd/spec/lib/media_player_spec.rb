@@ -20,7 +20,7 @@ describe MediaPlayer do
         expect(subject.songs.length).to eq(1)
       end
       it 'returns the song' do
-        expect(subject.add_song('Dangerous', 'Big Data').class).to eq(MediaPlayer::Song)
+        expect(subject.add_song('Dangerous', 'Big Data')).to be_a(MediaPlayer::Song)
       end
     end
     context 'when a parameter is not a string' do
@@ -41,7 +41,7 @@ describe MediaPlayer do
         expect(subject.playlists.length).to eq(1)
       end
       it 'returns the playlist' do
-        expect(subject.add_playlist('Greatest Hits').class).to eq(MediaPlayer::Playlist)
+        expect(subject.add_playlist('Greatest Hits')).to be_a(MediaPlayer::Playlist)
       end
     end
     context 'when the parameter is not a string' do
