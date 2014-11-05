@@ -4,7 +4,7 @@ class CashRegister
   end
 
   def total
-    sprintf('%.2f', @total)
+    @total.round(2)
   end
 
   def purchase(amount)
@@ -21,7 +21,7 @@ class CashRegister
     else
       if amount <= @total
         @total -= amount
-        "Your new total is $#{total}"
+        "Your new total is $#{sprintf('%.2f', total)}"
       elsif amount > @total
         change = amount - @total
         @total = 0
