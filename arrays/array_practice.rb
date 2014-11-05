@@ -2,7 +2,7 @@
 vals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 puts vals.join('...') + '...'
-puts "T-#{vals.reverse.join(', ')}... BLASTOFF!"
+puts "T-#{vals.reverse.join(', ')}...  BLASTOFF!"
 puts "The last element is #{vals.last}"
 puts "The first element is #{vals.first}"
 puts "The third element is #{vals[2]}"
